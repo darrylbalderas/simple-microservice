@@ -19,6 +19,11 @@ public class CatalogController {
     @Autowired
     public CatalogController(CatalogService service) {
         this.catalogService = service;
+        catalogService.createBook(new Book("Huckleberry fin","Mark Twain"));
+        catalogService.createBook(new Book("Captain Underpants 1","Dav Pilkey"));
+        catalogService.createBook(new Book("Captain Underpants 2","Dav Pilkey"));
+        catalogService.createBook(new Book("Captain Underpants 3","Dav Pilkey"));
+        catalogService.createBook(new Book("Tom Sawyer","Mark Twain"));
     }
 
     @RequestMapping("/")

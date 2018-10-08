@@ -8,11 +8,38 @@ import { BookService } from './service/book-service';
 @Component({
   selector: 'app-root',
   template: `
-   <ng-container *ngFor="let book of books">
-   {{book.id}}
-   {{book.title}}
-   {{book.Author}}
-   </ng-container>
+  <div class="hero is-info is-fullheight">
+    <div class=hero-head> 
+      <div class="container has-text-centered">
+        <h1 class="title"> Book Catalog </h1>
+      </div>
+    </div>
+    <div class="hero-body">
+        <div class="container"> 
+        <div class="columns" *ngFor="let book of books"> 
+          <div class="column">
+            <div class="card">
+              <header class="card-header">
+                  <p class="card-header-title">
+                  {{book.title}}
+                  </p>
+              </header>
+              <div class="card-content">
+                  <div class="content">
+                    Created by {{book.author}}
+                  </div>
+              </div>
+              <div class="card-content">
+                  <div class="content">
+                    Book id: {{book.id}}
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   `,
   styles: ['./app.component.css']
 })
